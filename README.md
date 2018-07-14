@@ -8,6 +8,7 @@ Application has been developed keeping in mind that
  <br/> --> Can handle huge input files, even GB's !! that too without running out of memory
  <br/> --> Minimal hard coding
  <br/> --> Full concentration on business logic by being the only Java code in the application
+ <br/> --> All configuration is XML based. Change in XML would write more columns to the o/p file
  <br/> --> Spring handles the reading of input file by Spring provided classes
  <br/> --> Spring handles the writing of output file by Spring provided classes
  <br/> --> Can detect automatically the file type and process the file accordingly
