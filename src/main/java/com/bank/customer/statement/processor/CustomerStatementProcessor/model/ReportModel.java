@@ -12,7 +12,6 @@ public class ReportModel {
 	private String startBalance;
 	private String mutation;
 	private String endBalance;
-	private Boolean iserrorRecord;
 	
 	@XmlAttribute(name = "reference")
 	public String getReference() {
@@ -56,11 +55,4 @@ public class ReportModel {
 	public void setEndBalance(String endBalance) {
 		this.endBalance = endBalance;
 	}
-	public Boolean getIserrorRecord() {
-		return iserrorRecord;
-	}
-	public void setIserrorRecord(Boolean iserrorRecord) {
-		this.iserrorRecord = iserrorRecord;
-	}
-	
 }

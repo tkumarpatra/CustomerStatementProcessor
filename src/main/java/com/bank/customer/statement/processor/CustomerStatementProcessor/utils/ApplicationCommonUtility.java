@@ -17,14 +17,14 @@ public class ApplicationCommonUtility {
 	
 	/**
 	 * This method checks whether the transaction reference number is duplicate or not
-	 * @param aXMLReportModel
+	 * @param aReportModel
 	 * @return 	<b>true</b> if the transaction is duplicate<br/>
 	 * 			<b>false</b> if the transaction is unique
 	 */
-	public static boolean isDuplicateTranactionRef(ReportModel aXMLReportModel) {
-		if (BusinessProcessor.transactionReferenceNumber.contains(aXMLReportModel.getReference())) {
+	public static boolean isDuplicateTranactionRef(ReportModel aReportModel) {
+		if (BusinessProcessor.transactionReferenceNumber.contains(aReportModel.getReference())) {
 			// Log the duplicate transaction
-			LOGGER.warning("DUPLICATE TRANSACTION NUMBER " + aXMLReportModel.getReference() + " ENCOUNTERED");
+			LOGGER.warning("DUPLICATE TRANSACTION NUMBER " + aReportModel.getReference() + " ENCOUNTERED");
 			return true;
 		}
 		return false;
@@ -32,29 +32,29 @@ public class ApplicationCommonUtility {
 	
 	/**
 	 * This method calculates the ending amount by mutation of starting amount and the mutation amount
-	 * @param aXMLReportModel
+	 * @param aReportModel
 	 * @return  <b>true</b> if the end amount matches the calculated end amount<br/>
 	 * 			<b>false</b> if the end amount does not match the calculated end amount
 	 */
-	public static boolean isEndBalanceCorrect(ReportModel aXMLReportModel) {
+	public static boolean isEndBalanceCorrect(ReportModel aReportModel) {
 
 		// Check addition or deduction
 		//Apply math based on + or - and compare with end balance attribute
-		if (aXMLReportModel.getMutation().contains("+")) {
-			BigDecimal calculatedEndBalance = new BigDecimal(aXMLReportModel.getStartBalance())
-					.add(new BigDecimal(aXMLReportModel.getMutation().substring(1)));
-			if (calculatedEndBalance.compareTo(new BigDecimal(aXMLReportModel.getEndBalance())) == 0) {
+		if (aReportModel.getMutation().contains("+")) {
+			BigDecimal calculatedEndBalance = new BigDecimal(aReportModel.getStartBalance())
+					.add(new BigDecimal(aReportModel.getMutation().substring(1)));
+			if (calculatedEndBalance.compareTo(new BigDecimal(aReportModel.getEndBalance())) == 0) {
 				return true;
 			}
-		} else if (aXMLReportModel.getMutation().contains("-")) {
-			BigDecimal calculatedEndBalance = new BigDecimal(aXMLReportModel.getStartBalance())
-					.subtract(new BigDecimal(aXMLReportModel.getMutation().substring(1)));
-			if (calculatedEndBalance.compareTo(new BigDecimal(aXMLReportModel.getEndBalance())) == 0) {
+		} else if (aReportModel.getMutation().contains("-")) {
+			BigDecimal calculatedEndBalance = new BigDecimal(aReportModel.getStartBalance())
+					.subtract(new BigDecimal(aReportModel.getMutation().substring(1)));
+			if (calculatedEndBalance.compareTo(new BigDecimal(aReportModel.getEndBalance())) == 0) {
 				return true;
 			}
 		}
 		//Log the error reference number
-		LOGGER.warning("END BALANCE FOR TRANSACTION REFERENCE NUMBER " + aXMLReportModel.getReference() + "IS NOT MATCHING WITH APPLIED MUTATION");
+		LOGGER.warning("END BALANCE FOR TRANSACTION REFERENCE NUMBER " + aReportModel.getReference() + "IS NOT MATCHING WITH APPLIED MUTATION");
 		return false;
 	}
 

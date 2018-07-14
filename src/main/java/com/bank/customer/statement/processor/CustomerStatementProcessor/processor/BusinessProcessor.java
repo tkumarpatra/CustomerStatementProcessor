@@ -22,21 +22,21 @@ public class BusinessProcessor implements ItemProcessor<ReportModel, ReportModel
 	public static ArrayList<String> transactionReferenceNumber = new ArrayList<String>();
 
 	@Override
-	public ReportModel process(ReportModel aXMLReportModel) throws Exception {
+	public ReportModel process(ReportModel aReportModel) throws Exception {
 		
 		//Checking for duplicate Transaction reference number
-		if(ApplicationCommonUtility.isDuplicateTranactionRef(aXMLReportModel)) {
+		if(ApplicationCommonUtility.isDuplicateTranactionRef(aReportModel)) {
 			//forwarding the transaction record to the writer section for writing to error record file
-			return aXMLReportModel;
+			return aReportModel;
 		}
 		
-		if(! ApplicationCommonUtility.isEndBalanceCorrect(aXMLReportModel)) {
+		if(! ApplicationCommonUtility.isEndBalanceCorrect(aReportModel)) {
 			//forwarding the transaction record to the writer section for writing to error record file
-			return aXMLReportModel;
+			return aReportModel;
 		}
 		//Adding the reference number to the processed list
-		transactionReferenceNumber.add(aXMLReportModel.getReference());
-		LOGGER.info("TRANSACTION WITH REFERENCE NUMBER " + aXMLReportModel.getReference() + " IS AS EXPECTED");
+		transactionReferenceNumber.add(aReportModel.getReference());
+		LOGGER.info("TRANSACTION WITH REFERENCE NUMBER " + aReportModel.getReference() + " IS AS EXPECTED");
 		//If the transaction is as expected no action is required and hence returning null which would return control to the reader
 		return null;
 	}
