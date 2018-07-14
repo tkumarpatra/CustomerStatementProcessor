@@ -1,7 +1,6 @@
 # CustomerStatementProcessor
 
 <b>Requirement</b><br/>
-Requirement<br/>
 This application would be responsible for receiving monthly deliveries of customer statement records. This information is delivered in two formats, CSV and XML. These records need to be validated.<br/>
 
 <b>About the Application</b><br/>
