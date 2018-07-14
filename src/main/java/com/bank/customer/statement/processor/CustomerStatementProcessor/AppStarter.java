@@ -55,7 +55,7 @@ public class AppStarter {
 		jobBuilder.addString("outputFileLocation", outputFileLocation);
 		JobParameters jobParameters = jobBuilder.toJobParameters();
 		JobExecution execution = jobLauncher.run(job, jobParameters);
-		System.out.println("Exit Status : " + execution.getStatus());
+		LOGGER.info("Exit Status : " + execution.getStatus());
 
 		LOGGER.info("JOB EXECUTION COMPLETED !!");
 
