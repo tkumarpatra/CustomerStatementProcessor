@@ -1,8 +1,8 @@
 # CustomerStatementProcessor
-Requirement 
+Requirement<br/>
 This application would be responsible for receiving monthly deliveries of customer statement records. This information is delivered in two formats, CSV and XML. These records need to be validated.
 
-About the Application
+<b>About the Application</b><br/>
 Application has been developed keeping in mind that 
  <br/> Can handle huge input files, even GB's !! that too without running out of memory
  <br/> Minimal hard coding
@@ -14,7 +14,7 @@ Application has been developed keeping in mind that
  <br/> Output file location needs to the a parameter passed to the program increasing the application re-usability
  <br/> Application Testability not limited to only business logic but extended to end to end testing
  
- How to Launch the application:
+ How to Launch the application:<br/>
   Local Machine:
   <br/> Import the project as existing Maven project
   <br/> Pass the following parameters as Program Arguments for csv file run
