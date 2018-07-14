@@ -1,20 +1,22 @@
 # CustomerStatementProcessor
-<h3>Requirement</h3><br/>
+
+
+<b>Requirement</b><br/>
 This application would be responsible for receiving monthly deliveries of customer statement records. This information is delivered in two formats, CSV and XML. These records need to be validated.
 
-<h3>About the Application</h3><br/>
+<b>About the Application</b><br/>
 Application has been developed keeping in mind that 
- <br/> Can handle huge input files, even GB's !! that too without running out of memory
- <br/> Minimal hard coding
- <br/> Full concentration on business logic by being the only Java code in the application
- <br/> Spring handles the reading of input file by Spring provided classes
- <br/> Spring handles the writing of output file by Spring provided classes
- <br/> Can detect automatically the file type and process the file accordingly
- <br/> Input file location needs to the a parameter passed to the program increasing the application re-usability
- <br/> Output file location needs to the a parameter passed to the program increasing the application re-usability
- <br/> Application Testability not limited to only business logic but extended to end to end testing
+ <br/> --> Can handle huge input files, even GB's !! that too without running out of memory
+ <br/> --> Minimal hard coding
+ <br/> --> Full concentration on business logic by being the only Java code in the application
+ <br/> --> Spring handles the reading of input file by Spring provided classes
+ <br/> --> Spring handles the writing of output file by Spring provided classes
+ <br/> --> Can detect automatically the file type and process the file accordingly
+ <br/> --> Input file location needs to the a parameter passed to the program increasing the application re-usability
+ <br/> --> Output file location needs to the a parameter passed to the program increasing the application re-usability
+ <br/> --> Application Testability not limited to only business logic but extended to end to end testing
  
- <h3>How to Launch the application:</h3><br/>
+ <b>How to Launch the application:</b><br/>
   Local Machine:
   <br/> Import the project as existing Maven project
   <br/> Pass the following parameters as Program Arguments for csv file run
