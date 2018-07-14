@@ -4,7 +4,7 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name = "record")
-public class XMLReportModel {
+public class ReportModel {
 	
 	private String reference;
 	private String accountNumber;
