@@ -18,11 +18,12 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
  *
  */
 
+
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {
 	    "classpath:config.xml",
 	    "classpath:csv-job-config.xml"})
-public class CustomerStatementProcessorApplicationTests_CSV{
+public class CustomerStatementProcessorApplicationCSVTest{
 	
 	@Autowired
     private JobLauncherTestUtils jobLauncherTestUtils ;

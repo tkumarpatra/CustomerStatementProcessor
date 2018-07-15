@@ -22,7 +22,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @ContextConfiguration(locations = {
 	    "classpath:config.xml",
 	    "classpath:xml-job-config.xml"})
-public class CustomerStatementProcessorApplicationTests_XML{
+public class CustomerStatementProcessorApplicationXMLTest{
 	
 	@Autowired
     private JobLauncherTestUtils jobLauncherTestUtils ;
